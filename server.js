@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const opRoutes = require("./routes/curdRoutes");
 const authRoutes = require("./routes/authRoutes");
 const cors = require("cors");
-
+require("dotenv").config();
 const app = express();
 
 app.use(express.json());
@@ -18,14 +18,9 @@ app.use("/api", authRoutes);
 
 
 app.use(cors());
-// MongoDB uri for connection
-const uri =
-  "mongodb+srv://mitaliharsh:sun123ARC@cluster0.jsxdi6w.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+console.log(process.env.URI);
+mongoose.connect(process.env.URI, {});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
