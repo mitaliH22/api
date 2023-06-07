@@ -18,11 +18,8 @@ app.use("/api", authRoutes);
 
 
 app.use(cors());
-// MongoDB uri for connection
-const uri =
-  "mongodb+srv://mitaliharsh:sun123ARC@cluster0.jsxdi6w.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(uri, {
+mongoose.connect(process.env.URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
