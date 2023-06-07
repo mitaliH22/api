@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const opRoutes = require("./routes/curdRoutes");
+// const opRoutes = require("./routes/curdRoutes");
 const authRoutes = require("./routes/authRoutes");
 const cors = require("cors");
 
@@ -12,7 +12,8 @@ app.use(
     origin: "*",
   })
 );
-app.use("/api", opRoutes);
+
+// app.use("/api", opRoutes);
 app.use("/api", authRoutes);
 
 
