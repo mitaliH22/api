@@ -19,7 +19,6 @@ app.use("/api", authRoutes);
 
 app.use(cors());
 
-console.log(process.env.URI);
 mongoose.connect(process.env.URI, {});
 
 const db = mongoose.connection;
